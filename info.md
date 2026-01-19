@@ -2,6 +2,8 @@
 
 A custom Lovelace card that provides real-time 3D visualization of the Reachy Mini robot.
 
+![Preview](preview.png)
+
 ## Features
 
 - 🤖 Real-time 3D robot visualization at 20Hz

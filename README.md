@@ -5,6 +5,8 @@
 
 A custom Lovelace card that provides real-time 3D visualization of the Reachy Mini robot. The card connects directly to the Reachy Mini daemon via WebSocket to display the robot's current state (head pose, antenna positions, body rotation) in an interactive 3D view.
 
+![Reachy Mini 3D Card Preview](preview.png)
+
 ## Features
 
 - Real-time 3D visualization of Reachy Mini robot at 20Hz
