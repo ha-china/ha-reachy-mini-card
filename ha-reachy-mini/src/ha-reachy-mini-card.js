@@ -12,7 +12,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import URDFLoader from 'urdf-loader';
 
 // Card version
-const CARD_VERSION = '1.0.0';
+const CARD_VERSION = '0.9.1';
 
 /**
  * WebSocket configuration constants
@@ -52,6 +52,10 @@ const ROBOT_JOINTS = {
 
 /**
  * Asset paths configuration
+ * 
+ * Note: Supports both HACS installation methods:
+ * 1. content_in_root: true  -> /hacsfiles/ha-reachy-mini/assets/...
+ * 2. content_in_root: false -> /hacsfiles/ha-reachy-mini/dist/assets/...
  */
 const ASSET_PATHS = {
   // Base path for assets (HACS installation path)
@@ -61,6 +65,50 @@ const ASSET_PATHS = {
   // Meshes directory
   MESHES: '/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/meshes'
 };
+
+/**
+ * Get the base path for assets, with automatic detection
+ * This function tries to detect the correct path based on where the card is loaded from
+ * @returns {string} - The base path for assets
+ */
+function getAssetBasePath() {
+  // Try to detect the path from the current script location
+  const scripts = document.querySelectorAll('script[src*="ha-reachy-mini-card"]');
+  if (scripts.length > 0) {
+    const scriptSrc = scripts[scripts.length - 1].src;
+    const url = new URL(scriptSrc);
+    // Extract the base path (remove the filename)
+    const pathParts = url.pathname.split('/');
+    pathParts.pop(); // Remove filename (ha-reachy-mini-card.js)
+    
+    // Check if we're in a dist/ subdirectory
+    const basePath = pathParts.join('/');
+    
+    // If path ends with /dist, assets are in /dist/assets
+    // If path doesn't end with /dist, assets are in /assets (content_in_root: true)
+    if (basePath.endsWith('/dist')) {
+      return basePath + '/assets';
+    } else {
+      return basePath + '/assets';
+    }
+  }
+  
+  // Fallback to default HACS path
+  return ASSET_PATHS.BASE;
+}
+
+/**
+ * Get asset paths with automatic path detection
+ * @returns {Object} - Asset paths object
+ */
+function getAssetPaths() {
+  const basePath = getAssetBasePath();
+  return {
+    BASE: basePath,
+    URDF: `${basePath}/robot-3d/reachy-mini.urdf`,
+    MESHES: `${basePath}/robot-3d/meshes`
+  };
+}
 
 /**
  * Three.js scene configuration constants
