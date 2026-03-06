@@ -4,11 +4,11 @@
 
 ### 1. 文件结构检查
 
-确保以下文件存在于**根目录**：
+确保以下文件存在于仓库中：
 
-- [ ] `ha-reachy-mini-card.js` - 主 JavaScript 文件
-- [ ] `assets/robot-3d/reachy-mini.urdf` - URDF 模型文件
-- [ ] `assets/robot-3d/meshes/*.stl` - STL 网格文件（42 个）
+- [ ] `dist/ha-reachy-mini-card.js` - 主 JavaScript 文件
+- [ ] `dist/assets/robot-3d/reachy-mini.urdf` - URDF 模型文件
+- [ ] `dist/assets/robot-3d/meshes/*.stl` - STL 网格文件（42 个）
 - [ ] `hacs.json` - HACS 配置文件
 - [ ] `info.md` - HACS 商店简介
 - [ ] `README.md` - 项目说明
@@ -39,12 +39,10 @@ npm run build
 ### 4. 文件同步
 
 ```bash
-# 复制构建文件到根目录
-cp ha-reachy-mini/dist/ha-reachy-mini-card.js ./
+# 复制构建文件到发布目录
 cp ha-reachy-mini/dist/ha-reachy-mini-card.js dist/
 ```
 
-- [ ] 根目录的 `ha-reachy-mini-card.js` 已更新
 - [ ] `dist/ha-reachy-mini-card.js` 已更新
 
 ### 5. HACS 配置检查
@@ -56,13 +54,13 @@ cp ha-reachy-mini/dist/ha-reachy-mini-card.js dist/
   "name": "Reachy Mini 3D Card",
   "render_readme": true,
   "homeassistant": "2024.11.0",
-  "filename": "ha-reachy-mini-card.js",
-  "content_in_root": true
+  "filename": "dist/ha-reachy-mini-card.js",
+  "content_in_root": false
 }
 ```
 
 - [ ] `filename` 与实际文件名匹配
-- [ ] `content_in_root: true`
+- [ ] `content_in_root: false`
 - [ ] `homeassistant` 版本正确
 
 ### 6. 文档检查
@@ -105,13 +103,13 @@ git push origin v1.0.1
 - 运行测试
 - 构建 JS 文件
 - 创建 GitHub Release
-- 上传 `ha-reachy-mini-card.zip`
+- 使用 source code 包供 HACS 拉取
 
 ### 4. 验证 Release
 
 检查 GitHub Release 页面：
 - [ ] Release 已创建
-- [ ] 包含 `ha-reachy-mini-card.zip`
+- [ ] Release 说明正确
 - [ ] Release 说明正确
 - [ ] 文件可以下载
 
@@ -137,19 +135,20 @@ git push origin v1.0.1
 检查以下文件是否存在：
 ```
 config/www/community/ha-reachy-mini/
-├── ha-reachy-mini-card.js
-└── assets/
-    └── robot-3d/
-        ├── reachy-mini.urdf
-        └── meshes/
-            └── *.stl (42 个文件)
+└── dist/
+    ├── ha-reachy-mini-card.js
+    └── assets/
+        └── robot-3d/
+            ├── reachy-mini.urdf
+            └── meshes/
+                └── *.stl (42 个文件)
 ```
 
 ### 3. 验证资源加载
 
 打开浏览器控制台（F12），检查日志：
 ```
-[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf
+[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf
 [Reachy Mini 3D] All assets loaded successfully
 ```
 
@@ -169,9 +168,9 @@ config/www/community/ha-reachy-mini/
 
 **检查**:
 1. `hacs.json` 配置正确
-2. `ha-reachy-mini-card.js` 在根目录
+2. `dist/ha-reachy-mini-card.js` 在发布目录
 3. `filename` 字段与文件名匹配
-4. `content_in_root: true`
+4. `content_in_root: false`
 
 ### 资源 404 错误
 

@@ -64,13 +64,13 @@ jobs:
             5. Clear browser cache and restart Home Assistant
             
             ## Manual Installation
-            1. Download `ha-reachy-mini-card.js` and the `assets/` folder from this release
-            2. Copy to `config/www/ha-reachy-mini/`
+            1. Download source code zip from this release
+            2. Copy `dist/` to `config/www/ha-reachy-mini/`
             3. Add resource in Lovelace configuration:
                ```yaml
                resources:
-                 - url: /local/ha-reachy-mini/ha-reachy-mini-card.js
-                   type: module
+                  - url: /local/ha-reachy-mini/dist/ha-reachy-mini-card.js
+                    type: module
                ```
             
             ## Usage
