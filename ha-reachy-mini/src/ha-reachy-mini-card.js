@@ -12,7 +12,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import URDFLoader from 'urdf-loader';
 
 // Card version
-const CARD_VERSION = '0.9.6';
+const CARD_VERSION = '0.9.7';
 
 /**
  * WebSocket configuration constants
@@ -66,6 +66,11 @@ const ASSET_PATHS = {
   MESHES: '/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/meshes'
 };
 
+const REMOTE_ASSET_BASES = [
+  `https://cdn.jsdelivr.net/gh/ha-china/ha-reachy-mini-card@v${CARD_VERSION}/dist/assets`,
+  'https://cdn.jsdelivr.net/gh/ha-china/ha-reachy-mini-card@main/dist/assets'
+];
+
 /**
  * Get the base path for assets, with automatic detection
  * This function tries to detect the correct path based on where the card is loaded from
@@ -108,6 +113,38 @@ function getAssetPaths() {
     URDF: `${basePath}/robot-3d/reachy-mini.urdf`,
     MESHES: `${basePath}/robot-3d/meshes`
   };
+}
+
+function createAssetPaths(basePath) {
+  return {
+    BASE: basePath,
+    URDF: `${basePath}/robot-3d/reachy-mini.urdf`,
+    MESHES: `${basePath}/robot-3d/meshes`
+  };
+}
+
+async function canLoadUrdf(urdfUrl) {
+  try {
+    const response = await fetch(urdfUrl, { cache: 'no-store' });
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function resolveAssetPaths() {
+  const candidates = [
+    getAssetPaths(),
+    ...REMOTE_ASSET_BASES.map(basePath => createAssetPaths(basePath))
+  ];
+
+  for (const candidate of candidates) {
+    if (await canLoadUrdf(candidate.URDF)) {
+      return candidate;
+    }
+  }
+
+  return candidates[0];
 }
 
 /**
@@ -1379,6 +1416,8 @@ class ReachyMini3DCard extends HTMLElement {
     try {
       const loader = new URDFLoader();
       
+      const activeAssetPaths = await resolveAssetPaths();
+
       // Track failed assets for error reporting (Requirement 7.6)
       const failedAssets = [];
       
@@ -1394,16 +1433,16 @@ class ReachyMini3DCard extends HTMLElement {
         // Extract filename from URL
         const filename = url.split('/').pop();
         // Return local path
-        return `${ASSET_PATHS.MESHES}/${filename}`;
+        return `${activeAssetPaths.MESHES}/${filename}`;
       });
 
       // Load the URDF model
       const robotModel = await new Promise((resolve, reject) => {
         // Fetch URDF file first
-        fetch(ASSET_PATHS.URDF)
+        fetch(activeAssetPaths.URDF)
           .then(response => {
             if (!response.ok) {
-              throw new Error(`Failed to load URDF: ${ASSET_PATHS.URDF} (${response.status})`);
+              throw new Error(`Failed to load URDF: ${activeAssetPaths.URDF} (${response.status})`);
             }
             return response.text();
           })
