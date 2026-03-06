@@ -12,7 +12,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import URDFLoader from 'urdf-loader';
 
 // Card version
-const CARD_VERSION = '0.9.8';
+const CARD_VERSION = '0.9.9';
 
 /**
  * WebSocket configuration constants
@@ -53,21 +53,20 @@ const ROBOT_JOINTS = {
 /**
  * Asset paths configuration
  * 
- * Note: Supports both HACS installation methods:
- * 1. content_in_root: true  -> /hacsfiles/ha-reachy-mini/assets/...
- * 2. content_in_root: false -> /hacsfiles/ha-reachy-mini/dist/assets/...
+ * Note: Supports both HACS and manual installation layouts:
+ * 1. HACS extracted layout -> /hacsfiles/ha-reachy-mini/assets/...
+ * 2. Manual dist layout    -> /local/ha-reachy-mini/dist/assets/...
  */
 const ASSET_PATHS = {
   // Base path for assets (HACS installation path)
-  BASE: '/hacsfiles/ha-reachy-mini/dist/assets',
+  BASE: '/hacsfiles/ha-reachy-mini/assets',
   // URDF file path
-  URDF: '/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf',
+  URDF: '/hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf',
   // Meshes directory
-  MESHES: '/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/meshes'
+  MESHES: '/hacsfiles/ha-reachy-mini/assets/robot-3d/meshes'
 };
 
 const LOCAL_ASSET_BASES = [
-  '/hacsfiles/ha-reachy-mini/dist/assets',
   '/hacsfiles/ha-reachy-mini/assets',
   '/local/ha-reachy-mini/dist/assets',
   '/local/ha-reachy-mini/assets'

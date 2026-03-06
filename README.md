@@ -33,14 +33,14 @@ A custom Lovelace card that provides real-time 3D visualization of the Reachy Mi
 
 ```yaml
 resources:
-  - url: /hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js
+  - url: /hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js
     type: module
 ```
 
 3. Clear browser cache and hard refresh.
 4. Verify these URLs are reachable in your browser:
-   - `/hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js`
-   - `/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf`
+   - `/hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js`
+   - `/hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf`
 
 ### Manual Installation
 

@@ -15,9 +15,9 @@
 HACS 安装完成后，Home Assistant 中应可访问如下路径：
 
 ```
-/hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js
-/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf
-/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/meshes/*.stl
+/hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js
+/hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf
+/hacsfiles/ha-reachy-mini/assets/robot-3d/meshes/*.stl
 ```
 
 ## Lovelace 资源路径
@@ -26,7 +26,7 @@ HACS 安装完成后，Home Assistant 中应可访问如下路径：
 
 ```yaml
 resources:
-  - url: /hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js
+  - url: /hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js
     type: module
 ```
 
@@ -34,8 +34,8 @@ resources:
 
 1. 清除浏览器缓存并强制刷新。
 2. 浏览器直接打开：
-   - `http://homeassistant.local:8123/hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js`
-   - `http://homeassistant.local:8123/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf`
+   - `http://homeassistant.local:8123/hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js`
+   - `http://homeassistant.local:8123/hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf`
 3. 打开控制台确认没有 `404` 资源错误。
 
 ## 常见问题

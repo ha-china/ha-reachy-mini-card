@@ -54,12 +54,12 @@ cp ha-reachy-mini/dist/ha-reachy-mini-card.js dist/
   "render_readme": true,
   "homeassistant": "2024.11.0",
   "filename": "ha-reachy-mini-card.js",
-  "content_in_root": true
+  "content_in_root": false
 }
 ```
 
 - [ ] `filename` 与实际文件名匹配
-- [ ] `content_in_root: true`
+- [ ] `content_in_root: false`
 - [ ] `homeassistant` 版本正确
 
 ### 6. 文档检查
@@ -145,7 +145,7 @@ config/www/community/ha-reachy-mini/
 
 打开浏览器控制台（F12），检查日志：
 ```
-[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf
+[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf
 [Reachy Mini 3D] All assets loaded successfully
 ```
 
@@ -167,7 +167,7 @@ config/www/community/ha-reachy-mini/
 1. `hacs.json` 配置正确
 2. `dist/ha-reachy-mini-card.js` 在发布目录
 3. `filename` 字段与文件名匹配
-4. `content_in_root: true`
+4. `content_in_root: false`
 
 ### 资源 404 错误
 
