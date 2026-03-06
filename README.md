@@ -20,29 +20,32 @@ A custom Lovelace card that provides real-time 3D visualization of the Reachy Mi
 
 ## Requirements
 
-- Home Assistant 2023.1.0 or newer
+- Home Assistant 2024.11.0 or newer
 - Reachy Mini daemon running and accessible from your Home Assistant instance
 - HACS (Home Assistant Community Store) for easy installation
 
 ## Installation
 
-## Known Issues
+### HACS Installation (Recommended)
 
-### HACS Installation
-Due to limitations with HACS plugin structure, automatic installation may have issues:
+1. Install from HACS (Frontend/Dashboard category).
+2. Make sure the resource URL is:
 
-1. **Resource path incorrect**: HACS may add the resource as `/hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js` instead of `/hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js`
-   - **Fix**: Manually edit the resource URL in Lovelace configuration to include `/dist/`
+```yaml
+resources:
+  - url: /hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js
+    type: module
+```
 
-2. **Assets not downloaded**: HACS may only download the JS file without the `dist/assets/` folder containing URDF and mesh files
-   - **Fix**: Manually download the `dist/` folder from GitHub and copy to `config/www/community/ha-reachy-mini/`
+3. Clear browser cache and hard refresh.
+4. Verify these URLs are reachable in your browser:
+   - `/hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js`
+   - `/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/reachy-mini.urdf`
 
-I am working on improving HACS compatibility.
+### Manual Installation
 
-### Manual Installation (Recommended)
-
-1. Download the `dist/` folder from this repository
-2. Copy to `config/www/community/ha-reachy-mini/`:
+1. Download the `dist/` folder from this repository.
+2. Copy it to `config/www/community/ha-reachy-mini/` so you have:
    ```
    config/www/community/ha-reachy-mini/
    └── dist/
@@ -53,7 +56,7 @@ I am working on improving HACS compatibility.
                └── meshes/
                    └── *.stl
    ```
-3. Add the resource in your dashboard resources:
+3. Add the resource:
 
 ```yaml
 resources:
@@ -61,7 +64,11 @@ resources:
     type: module
 ```
 
-4. Restart Home Assistant and clear your browser cache
+4. Restart Home Assistant and clear your browser cache.
+
+### Legacy Note (Old Releases)
+
+Some older releases uploaded only a single release asset (`ha-reachy-mini-card.js`), which could cause missing `dist/assets` files during HACS install. New releases no longer use that packaging method.
 
 ## Configuration
 
