@@ -53,13 +53,13 @@ cp ha-reachy-mini/dist/ha-reachy-mini-card.js dist/
   "name": "Reachy Mini 3D Card",
   "render_readme": true,
   "homeassistant": "2024.11.0",
-  "filename": "dist/ha-reachy-mini-card.js",
-  "content_in_root": false
+  "filename": "ha-reachy-mini-card.js",
+  "content_in_root": true
 }
 ```
 
 - [ ] `filename` 与实际文件名匹配
-- [ ] `content_in_root: false`
+- [ ] `content_in_root: true`
 - [ ] `homeassistant` 版本正确
 
 ### 6. 文档检查
@@ -167,7 +167,7 @@ config/www/community/ha-reachy-mini/
 1. `hacs.json` 配置正确
 2. `dist/ha-reachy-mini-card.js` 在发布目录
 3. `filename` 字段与文件名匹配
-4. `content_in_root: false`
+4. `content_in_root: true`
 
 ### 资源 404 错误
 

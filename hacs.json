@@ -2,6 +2,6 @@
   "name": "Reachy Mini 3D Card",
   "render_readme": true,
   "homeassistant": "2024.11.0",
-  "filename": "dist/ha-reachy-mini-card.js",
-  "content_in_root": false
+  "filename": "ha-reachy-mini-card.js",
+  "content_in_root": true
 }
