@@ -13,7 +13,6 @@
 - [ ] `info.md` - HACS 商店简介
 - [ ] `README.md` - 项目说明
 - [ ] `HACS_INSTALLATION.md` - 安装说明
-- [ ] `TROUBLESHOOTING.md` - 故障排除指南
 
 ### 2. 版本号检查
 
@@ -67,7 +66,6 @@ cp ha-reachy-mini/dist/ha-reachy-mini-card.js dist/
 
 - [ ] `README.md` 包含最新的安装说明
 - [ ] `info.md` 包含简洁的功能介绍
-- [ ] `TROUBLESHOOTING.md` 包含常见问题解决方案
 - [ ] 所有文档中的版本号已更新
 
 ### 7. Git 检查
@@ -109,7 +107,6 @@ git push origin v1.0.1
 
 检查 GitHub Release 页面：
 - [ ] Release 已创建
-- [ ] Release 说明正确
 - [ ] Release 说明正确
 - [ ] 文件可以下载
 
@@ -257,5 +254,5 @@ config/www/community/ha-reachy-mini/
 
 如果遇到问题：
 - 提交 GitHub Issue
-- 查看 TROUBLESHOOTING.md
+- 查看 HACS_INSTALLATION.md
 - 检查 GitHub Actions 日志

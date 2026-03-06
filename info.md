@@ -44,7 +44,7 @@ If you see 404 errors for 3D assets:
 1. Clear browser cache (see above)
 2. Hard refresh the page
 3. Restart browser
-4. Check [TROUBLESHOOTING.md](https://github.com/Desmond-Dong/ha-reachy-mini/blob/main/ha-reachy-mini/TROUBLESHOOTING.md) for details
+4. Check browser console errors and installation guide details
 
 ## Requirements
 
@@ -53,6 +53,6 @@ If you see 404 errors for 3D assets:
 
 ## Documentation
 
-- [Full README](https://github.com/Desmond-Dong/ha-reachy-mini)
-- [Troubleshooting Guide](https://github.com/Desmond-Dong/ha-reachy-mini/blob/main/ha-reachy-mini/TROUBLESHOOTING.md)
-- [Configuration Options](https://github.com/Desmond-Dong/ha-reachy-mini#configuration-options)
+- [Full README](https://github.com/ha-china/ha-reachy-mini-card)
+- [HACS Installation Guide](https://github.com/ha-china/ha-reachy-mini-card/blob/main/HACS_INSTALLATION.md)
+- [Configuration Options](https://github.com/ha-china/ha-reachy-mini-card#configuration-options)

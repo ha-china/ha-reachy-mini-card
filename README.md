@@ -60,7 +60,7 @@ resources:
 
 ```yaml
 resources:
-  - url: /hacsfiles/ha-reachy-mini/dist/ha-reachy-mini-card.js
+  - url: /local/ha-reachy-mini/dist/ha-reachy-mini-card.js
     type: module
 ```
 
