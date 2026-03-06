@@ -93,7 +93,5 @@ jobs:
             | `enable_grid` | `true` | Show floor grid |
           draft: false
           prerelease: false
-          files: |
-            dist/ha-reachy-mini-card.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
