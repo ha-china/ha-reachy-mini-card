@@ -12,7 +12,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import URDFLoader from 'urdf-loader';
 
 // Card version
-const CARD_VERSION = '0.9.9';
+const CARD_VERSION = '1.0.0';
 
 /**
  * WebSocket configuration constants

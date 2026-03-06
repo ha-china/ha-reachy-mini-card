@@ -15,6 +15,9 @@ A custom Lovelace card that provides real-time 3D visualization of the Reachy Mi
 
 ## Quick Start
 
+Use My Home Assistant one-click import:
+[Add repository to HACS](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ha-reachy-mini-card&category=plugin)
+
 1. Install via HACS
 2. Add the card to your dashboard
 3. Configure daemon host and port

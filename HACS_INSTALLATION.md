@@ -46,7 +46,7 @@ A: 这通常是旧版本发布方式导致的（release 中只上传了单个 JS
 
 ### Q: 资源路径应该是 `/dist/...` 还是根目录？
 
-A: 统一使用 `/hacsfiles/ha-reachy-mini/dist/...`。
+A: HACS 安装统一使用 `/hacsfiles/ha-reachy-mini/...`；手动安装通常使用 `/local/ha-reachy-mini/dist/...`。
 
 ### Q: 更新后仍然显示旧内容？
 

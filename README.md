@@ -2,6 +2,7 @@
 
 [![HACS Badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Open your Home Assistant instance and add this repository in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ha-reachy-mini-card&category=plugin)
 
 A custom Lovelace card that provides real-time 3D visualization of the Reachy Mini robot. The card connects directly to the Reachy Mini daemon via WebSocket to display the robot's current state (head pose, antenna positions, body rotation) in an interactive 3D view.
 
@@ -27,6 +28,10 @@ A custom Lovelace card that provides real-time 3D visualization of the Reachy Mi
 ## Installation
 
 ### HACS Installation (Recommended)
+
+Use My Home Assistant for one-click repository import:
+
+- **One-click add to HACS**: https://my.home-assistant.io/redirect/hacs_repository/?owner=ha-china&repository=ha-reachy-mini-card&category=plugin
 
 1. Install from HACS (Frontend/Dashboard category).
 2. Make sure the resource URL is:

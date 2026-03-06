@@ -1,6 +1,6 @@
 {
   "name": "ha-reachy-mini",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Home Assistant custom card for Reachy Mini 3D visualization",
   "main": "dist/ha-reachy-mini-card.js",
   "scripts": {
