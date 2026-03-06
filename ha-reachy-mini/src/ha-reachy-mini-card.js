@@ -12,7 +12,7 @@ import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import URDFLoader from 'urdf-loader';
 
 // Card version
-const CARD_VERSION = '0.9.7';
+const CARD_VERSION = '0.9.8';
 
 /**
  * WebSocket configuration constants
@@ -66,9 +66,11 @@ const ASSET_PATHS = {
   MESHES: '/hacsfiles/ha-reachy-mini/dist/assets/robot-3d/meshes'
 };
 
-const REMOTE_ASSET_BASES = [
-  `https://cdn.jsdelivr.net/gh/ha-china/ha-reachy-mini-card@v${CARD_VERSION}/dist/assets`,
-  'https://cdn.jsdelivr.net/gh/ha-china/ha-reachy-mini-card@main/dist/assets'
+const LOCAL_ASSET_BASES = [
+  '/hacsfiles/ha-reachy-mini/dist/assets',
+  '/hacsfiles/ha-reachy-mini/assets',
+  '/local/ha-reachy-mini/dist/assets',
+  '/local/ha-reachy-mini/assets'
 ];
 
 /**
@@ -133,9 +135,13 @@ async function canLoadUrdf(urdfUrl) {
 }
 
 async function resolveAssetPaths() {
+  const detectedBasePath = getAssetBasePath();
+
   const candidates = [
-    getAssetPaths(),
-    ...REMOTE_ASSET_BASES.map(basePath => createAssetPaths(basePath))
+    createAssetPaths(detectedBasePath),
+    ...LOCAL_ASSET_BASES
+      .filter(basePath => basePath !== detectedBasePath)
+      .map(basePath => createAssetPaths(basePath))
   ];
 
   for (const candidate of candidates) {
