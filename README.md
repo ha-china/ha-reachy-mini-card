@@ -38,21 +38,21 @@ Use My Home Assistant for one-click repository import:
 
 ```yaml
 resources:
-  - url: /hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js
+  - url: /hacsfiles/ha-reachy-mini-card/ha-reachy-mini-card.js
     type: module
 ```
 
 3. Clear browser cache and hard refresh.
 4. Verify these URLs are reachable in your browser:
-   - `/hacsfiles/ha-reachy-mini/ha-reachy-mini-card.js`
-   - `/hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf`
+   - `/hacsfiles/ha-reachy-mini-card/ha-reachy-mini-card.js`
+   - `/hacsfiles/ha-reachy-mini-card/assets/robot-3d/reachy-mini.urdf`
 
 ### Manual Installation
 
 1. Download the `dist/` folder from this repository.
-2. Copy it to `config/www/community/ha-reachy-mini/` so you have:
+2. Copy it to `config/www/community/ha-reachy-mini-card/` so you have:
    ```
-   config/www/community/ha-reachy-mini/
+   config/www/community/ha-reachy-mini-card/
    └── dist/
        ├── ha-reachy-mini-card.js
        └── assets/
@@ -65,7 +65,7 @@ resources:
 
 ```yaml
 resources:
-  - url: /local/ha-reachy-mini/dist/ha-reachy-mini-card.js
+  - url: /local/ha-reachy-mini-card/dist/ha-reachy-mini-card.js
     type: module
 ```
 

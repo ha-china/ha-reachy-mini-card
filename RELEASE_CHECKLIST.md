@@ -145,7 +145,7 @@ config/www/community/ha-reachy-mini/
 
 打开浏览器控制台（F12），检查日志：
 ```
-[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini/assets/robot-3d/reachy-mini.urdf
+[Reachy Mini 3D] Loading robot from: /hacsfiles/ha-reachy-mini-card/assets/robot-3d/reachy-mini.urdf
 [Reachy Mini 3D] All assets loaded successfully
 ```
 

@@ -68,10 +68,10 @@ jobs:
             2. Copy `dist/` to `config/www/ha-reachy-mini/`
             3. Add resource in Lovelace configuration:
                ```yaml
-               resources:
-                  - url: /local/ha-reachy-mini/dist/ha-reachy-mini-card.js
+                resources:
+                  - url: /local/ha-reachy-mini-card/dist/ha-reachy-mini-card.js
                     type: module
-               ```
+                ```
             
             ## Usage
             Add the card to your dashboard:
